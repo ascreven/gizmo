@@ -8,7 +8,7 @@ import { CityService }  from '../city.service';
 @Component({
   selector: 'app-city-detail',
   templateUrl: './city-detail.component.html',
-  styleUrls: [ './city-detail.component.css' ]
+  styleUrls: [ './city-detail.component.scss' ]
 })
 export class CityDetailComponent implements OnInit {
   @Input() city: City;
