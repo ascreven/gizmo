@@ -1,0 +1,21 @@
+<h2>My Countries</h2>
+
+<div>
+  <label>Country name:
+    <input #countryName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(countryName.value); countryName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="countries">
+  <li *ngFor="let country of countries">
+    <a routerLink="/detail/{{country.id}}">
+      <span class="badge">{{country.id}}</span> {{country.country}}
+    </a>
+    <button class="delete" title="delete country"
+      (click)="delete(country)">x</button>
+  </li>
+</ul>

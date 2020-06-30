@@ -8,26 +8,26 @@ import { City } from './city';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const cities = [
-      { id: 11, name: 'London' },
-      { id: 12, name: 'Paris' },
-      { id: 13, name: 'Rome' },
-      { id: 14, name: 'Prague' },
-      { id: 15, name: 'Berlin' },
-      { id: 16, name: 'Barcelona' },
-      { id: 17, name: 'Cairo' },
-      { id: 18, name: 'Dubai' },
-      { id: 19, name: 'Istanbul' },
-      { id: 20, name: 'Cape Town' },
-      { id: 21, name: 'Mumbai' },
-      { id: 22, name: 'Shanghai' },
-      { id: 23, name: 'Tokyo' },
-      { id: 24, name: 'Seoul' },
-      { id: 25, name: 'Bangkok' },
-      { id: 26, name: 'Sydney' },
-      { id: 27, name: 'Toronto' },
-      { id: 28, name: 'Los Angeles' },
-      { id: 29, name: 'New York City' },
-      { id: 30, name: 'Rio de Janeiro' }
+      { id: 11, name: 'London', country: 'United Kingdom' },
+      { id: 12, name: 'Paris', country: 'France' },
+      { id: 13, name: 'Rome', country: 'Italy' },
+      { id: 14, name: 'Prague', country: 'Czech Republic' },
+      { id: 15, name: 'Berlin', country: 'Germany' },
+      { id: 16, name: 'Barcelona', country: 'Spain' },
+      { id: 17, name: 'Cairo', country: 'Egypt' },
+      { id: 18, name: 'Dubai', country: 'Sudai Arabia' },
+      { id: 19, name: 'Istanbul', country: 'Turkey' },
+      { id: 20, name: 'Cape Town', country: 'South Africa' },
+      { id: 21, name: 'Mumbai', country: 'India' },
+      { id: 22, name: 'Shanghai', country: 'China' },
+      { id: 23, name: 'Tokyo', country: 'Japan' },
+      { id: 24, name: 'Seoul', country: 'South Korea' },
+      { id: 25, name: 'Bangkok', country: 'Thailand' },
+      { id: 26, name: 'Sydney', country: 'Australia' },
+      { id: 27, name: 'Toronto', country: 'Canada' },
+      { id: 28, name: 'Los Angeles', country: 'United States' },
+      { id: 29, name: 'New York City', country: 'United States' },
+      { id: 30, name: 'Rio de Janeiro', country: 'Brazil' }
     ];
     return {cities};
   }
