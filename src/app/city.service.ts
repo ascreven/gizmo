@@ -44,8 +44,28 @@ export class CityService {
       );
   }
 
+  /** GET city by name and country. Will 404 if id not found */
+  getCity(name: string, country: string): Observable<City> {
+    const url = `${this.citiesUrl}/?name=${name.replace('_', ' ')}&country=${country.replace('_', ' ')}`;
+    return this.http.get<City>(url).pipe(
+      map(_ => {
+        if (Object.keys(_).length) { // _ is array of cities that match; city exists
+          return _[0];
+        }
+      }),
+      tap(_ =>  {
+        if (_ && _.id) { // id exists, city exists
+          this.log(`fetched city name=${name}, country=${country}`);
+        } else {
+          throw new Error("invalid city");
+        }
+      }),
+      catchError(this.handleError<City>(`getCity name=${name}, country=${country}`))
+    );
+  }
+
   /** GET city by id. Will 404 if id not found */
-  getCity(id: number): Observable<City> {
+  getCityById(id: number): Observable<City> {
     const url = `${this.citiesUrl}/${id}`;
     return this.http.get<City>(url).pipe(
       tap(_ => this.log(`fetched city id=${id}`)),

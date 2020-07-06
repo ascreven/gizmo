@@ -12,6 +12,27 @@
 
 <ul class="cities">
   <li *ngFor="let city of cities">
+    <a routerLink="/detail/{{city.country.replace(' ', '_')}}/{{city.name.replace(' ', '_')}}">
+      <span class="badge">{{city.id}}</span> {{city.name}}
+    </a>
+    <button class="delete" title="delete city"
+      (click)="delete(city)">x</button>
+  </li>
+</ul>
+<h2>My Cities</h2>
+
+<div>
+  <label>City name:
+    <input #cityName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(cityName.value); cityName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="cities">
+  <li *ngFor="let city of cities">
     <a routerLink="/detail/{{city.id}}">
       <span class="badge">{{city.id}}</span> {{city.name}}
     </a>

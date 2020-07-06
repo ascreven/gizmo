@@ -14,3 +14,7 @@
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
 </div>
+
+<div *ngIf="!city">
+  <app-city-search></app-city-search>
+</div>

@@ -4,12 +4,14 @@ import { CitiesComponent } from './cities/cities.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { CityDetailComponent }  from './city-detail/city-detail.component';
 import { CountriesComponent } from './countries/countries.component';
+import { CountryDetailComponent }  from './country-detail/country-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: CityDetailComponent },
+  { path: 'detail/:country/:name', component: CityDetailComponent },
   { path: 'cities', component: CitiesComponent },
+  { path: 'detail/:country', component: CountryDetailComponent },
   { path: 'countries', component: CountriesComponent }
 ];
 

@@ -15,7 +15,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 15, name: 'Berlin', country: 'Germany' },
       { id: 16, name: 'Barcelona', country: 'Spain' },
       { id: 17, name: 'Cairo', country: 'Egypt' },
-      { id: 18, name: 'Dubai', country: 'Sudai Arabia' },
+      { id: 18, name: 'Dubai', country: 'Saudi Arabia' },
       { id: 19, name: 'Istanbul', country: 'Turkey' },
       { id: 20, name: 'Cape Town', country: 'South Africa' },
       { id: 21, name: 'Mumbai', country: 'India' },

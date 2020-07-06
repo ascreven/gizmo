@@ -24,8 +24,18 @@ export class CityDetailComponent implements OnInit {
   }
 
   getCity(): void {
+    const name = this.route.snapshot.paramMap.get('name');
+    const dbCity = name.replace("_", " ");
+    const country = this.route.snapshot.paramMap.get('country');
+    const dbCountry = country.replace("_", " ");
+    this.cityService.getCity(dbCity, dbCountry)
+      .subscribe(city => this.city = city);
+      // city returns an array, should only have one entry
+  }
+
+  getCityById(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.cityService.getCity(id)
+    this.cityService.getCityById(id)
       .subscribe(city => this.city = city);
   }
 

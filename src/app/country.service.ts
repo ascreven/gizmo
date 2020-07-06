@@ -5,9 +5,10 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Country } from './country';
+import { City } from './city';
 import { MessageService } from './message.service';
 import { CityService } from './city.service';
-
+import * as _ from "lodash";
 
 @Injectable({ providedIn: 'root' })
 export class CountryService {
@@ -23,32 +24,6 @@ export class CountryService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  //getCountries(): Observable<Country[]> {
-  //   return this.cityService.getCities().pipe(
-  //     map((response) =>  {
-  //           // Modify response here
-  //           countryList: of(this.countries);
-  //           for (let r of response) {
-  //             found: false
-  //             if (null != countryList) {
-  //               for (let country of countryList) {
-  //                 if (r.country === country.id && !found) {
-  //                   country.locations.push(r);
-  //                   this.found = true;
-  //                 }
-  //               }
-  //             }
-  //             if (!this.found) {
-  //               newCountry: Country = { id: r.country, locations: [ r ] };
-  //               countryList.push(this.newCountry);
-  //             }
-  //           }
-  //
-  //           // Return modified response
-  //           return countryList;
-  //       }), catchError(this.handleError<Country[]>('getCountries', []))
-  //     );
-  // }
 
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.countriesUrl)
@@ -83,23 +58,52 @@ export class CountryService {
     this.messageService.add(`CountryService: ${message}`);
   }
 
-  // getCountries(cities: City[]): Country[] {
-  //   for (i = 0; i < cities.length; i++) {
-  //     found = false;
-  //     currentCountry = cities[i].country;
-  //     for (j = 0; j < countries.length; j++) {
-  //       if (currentCountry === countries[j].id) {
-  //         countries[j].locations.push(cities[i]);
-  //         found = true;
-  //         j = countries.length;
-  //       }
-  //     }
-  //     if (!found) {
-  //       newCountry = { id: currentCountry, locations: [ cities[i] ] };
-  //       countries.push(newCountry);
-  //     }
-  //   }
-  //
-  //   return countries;
-  // }
+  /** GET country by name. Will 404 if id not found */
+  getCountry(country: string): Observable<Country> {
+    const url = `${this.countriesUrl}/?country=${country.replace("_", " ")}`;
+    return this.http.get<Country>(url).pipe(
+      map(x => {
+        if (Object.keys(x).length) { // _ is array of cities in that country
+          return x[0];
+        }
+      }),
+      tap(_ => this.log(`fetched country country=${country}`)),
+      catchError(this.handleError<Country>(`getCountry country=${country}`))
+    );
+  }
+
+  /** GET country by id. Will 404 if id not found */
+  getCountryById(id: number): Observable<Country> {
+    const url = `${this.countriesUrl}/${id}`;
+    return this.http.get<Country>(url).pipe(
+      tap(_ => this.log(`fetched country id=${id}`)),
+      catchError(this.handleError<Country>(`getCountry id=${id}`))
+    );
+  }
+
+  /** GET cities by country name. Will 404 if id not found */
+  getCitiesInCountry(country: string): Observable<City[]> {
+    const url = `${this.countriesUrl}/?country=${country.replace("_", " ")}`;
+    return this.http.get<City[]>(url).pipe(
+      tap(_ => this.log(`fetched cities in country=${country}`)),
+      catchError(this.handleError<City[]>(`getCitiesInCountry country=${country}`))
+    );
+  }
+
+  /* GET (unique) countries whose name contains search term */
+  searchCountries(term: string): Observable<Country[]> {
+    if (!term.trim()) {
+      // if not search term, return empty city array.
+      return of([]);
+    }
+    return this.http.get<Country[]>(`${this.countriesUrl}/?country=${term}`).pipe(
+      map(x =>
+        _.uniqBy(x, 'country')),
+      tap(x => x.length ?
+         this.log(`found countries matching "${term}"`) :
+         this.log(`no countries matching "${term}"`)),
+      catchError(this.handleError<Country[]>('searchCountries', []))
+    );
+  }
+
 }

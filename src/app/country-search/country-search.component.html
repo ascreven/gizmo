@@ -5,8 +5,8 @@
 
   <ul class="search-result">
     <li *ngFor="let country of countries$ | async" >
-      <a routerLink="/detail/{{country.id}}">
-        {{country.name}}
+      <a routerLink="/countries/detail/{{country.country.replace(' ', '_')}}">
+        {{country.country}}
       </a>
     </li>
   </ul>

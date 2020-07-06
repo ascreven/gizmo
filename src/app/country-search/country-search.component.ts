@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as _ from "lodash";
 import { Observable, Subject } from 'rxjs';
 
 import {
@@ -16,6 +16,7 @@ import { CountryService } from '../country.service';
 })
 export class CountrySearchComponent implements OnInit {
   countries$: Observable<Country[]>;
+  countries: Country[];
   private searchTerms = new Subject<string>();
 
   constructor(private countryService: CountryService) {}
