@@ -1,6 +1,6 @@
-<div *ngIf="city">
+<div *ngIf="city" class="city-detail">
   <h2>{{city.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{city.id}}</div>
+  <div><label>id: </label>{{city.id}}</div>
   <div>
     <label>name:
       <input [(ngModel)]="city.name" placeholder="name"/>
@@ -12,7 +12,7 @@
     </label>
   </div>
   <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button (click)="save()" class="margin-left-10">save</button>
 </div>
 
 <div *ngIf="!city">

@@ -23,7 +23,6 @@ export class CountriesComponent implements OnInit {
     this.countryService.getCountries()
     .subscribe(countries => {
       this.countries = _.uniqBy(countries, 'country');
-      console.log(countries);
     });
   }
 

@@ -1,60 +1,33 @@
 /* CountryDetailComponent's private SCSS styles */
-label {
-	display: inline-block;
-	width: 3em;
-	margin: .5em 0;
-	color: #607D8B;
-	font-weight: bold;
-}
-input {
-	height: 2em;
-	font-size: 1em;
-	padding-left: .4em;
-}
-button {
-	margin-top: 20px;
-	font-family: Arial;
-	background-color: #eee;
-	border: none;
-	padding: 5px 10px;
-	border-radius: 4px;
-	cursor: pointer;
-	&:hover {
-		background-color: #cfd8dc;
-	}
-	&:disabled {
-		background-color: #eee;
-		color: #ccc;
-		cursor: auto;
-	}
-}
+@import "./src/app/app.component.scss";
+
 .cities {
 	margin: 0 0 2em 0;
 	list-style-type: none;
 	padding: 0;
 	width: 15em;
 	li {
-		position: relative;
 		cursor: pointer;
-		background-color: #EEE;
+		background-color: $silver;
 		margin: .5em;
 		padding: .3em 0;
-		height: 1.6em;
+		height: 2em;
 		border-radius: 4px;
 		&:hover {
-			color: #607D8B;
-			background-color: #DDD;
+			color: $white;
+			background-color: $pink;
 			left: .1em;
+			a {
+				color: $white;
+			}
 		}
 	}
 	a {
-		color: #333;
-		text-decoration: none;
-		position: relative;
+		color: $blue;
 		display: block;
 		width: 250px;
 		&:hover {
-			color: #607D8B;
+			color: $white;
 		}
 	}
 	.badge {
@@ -62,15 +35,42 @@ button {
 		font-size: small;
 		color: white;
 		padding: 0.8em 0.7em 0 0.7em;
-		background-color: #405061;
+		background-color: $blue;
 		line-height: 1em;
-		position: relative;
-		left: -1px;
-		top: -4px;
-		height: 1.8em;
+		margin-top: -5px;
+		height: 2.4em;
 		min-width: 16px;
 		text-align: right;
 		margin-right: .8em;
 		border-radius: 4px 0 0 4px;
 	}
+}
+button {
+	background-color: $silver;
+	color: $teal;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	cursor: hand;
+	font-family: Arial;
+	&:hover {
+		color: $white;
+		background-color: $teal;
+	}
+}
+button.delete {
+	position: relative;
+	top: -2em;
+	margin-left: 12.5em;
+	padding: 4px 10px;
+	color: $blue;
+	background-color: $silver;
+	&:hover {
+		background-color: $blue;
+		color: $white;
+	}
+}
+label {
+	color: $teal;
 }

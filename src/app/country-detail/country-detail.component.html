@@ -1,19 +1,21 @@
-<div *ngIf="country">
-  <h2>{{country.country | uppercase}} Details</h2>
-  <br>
-  <h3>Cities located in {{country.country}}</h3>
-  <!-- list of cities within country -->
-  <ul class="cities">
-    <li *ngFor="let city of cities">
-      <a routerLink="/detail/{{city.country.replace(' ', '_')}}/{{city.name.replace(' ', '_')}}">
-        <span class="badge">{{city.id}}</span> {{city.name}}
-      </a>
-    </li>
-  </ul>
+<div class="content">
+  <div *ngIf="country">
+    <h2 class="subtitle">{{country.country | uppercase}} Details</h2>
+    <br>
+    <h3 class="heading">Cities located in {{country.country}}</h3>
+    <!-- list of cities within country -->
+    <ul class="cities">
+      <li *ngFor="let city of cities">
+        <a routerLink="/detail/{{city.country.replace(' ', '_')}}/{{city.name.replace(' ', '_')}}">
+          <span class="badge">{{city.id}}</span> {{city.name}}
+        </a>
+      </li>
+    </ul>
 
-  <button (click)="goBack()">go back</button>
-</div>
+    <button (click)="goBack()">go back</button>
+  </div>
 
-<div *ngIf="!country">
-  <app-country-search></app-country-search>
+  <div *ngIf="!country">
+    <app-country-search></app-country-search>
+  </div>
 </div>

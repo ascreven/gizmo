@@ -1,38 +1,23 @@
 /* MessagesComponent's private SCSS styles */
-h2 {
-	color: red;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: lighter;
-}
-body {
-	margin: 2em;
-	color: crimson;
-	font-family: Cambria, Georgia;
-}
-input[text] {
-	color: crimson;
-	font-family: Cambria, Georgia;
-}
-button {
-	color: crimson;
-	font-family: Cambria, Georgia;
-	&:hover {
-		background-color: #cfd8dc;
-	}
-	&:disabled {
-		background-color: #eee;
-		color: #aaa;
-		cursor: auto;
-	}
+@import "./src/app/app.component.scss";
+
+.messages {
+	padding: 20px;
+	background-color: $silver;
+	color: $teal;
+	flex-grow: 1;
 }
 button.clear {
 	font-family: Arial;
-	background-color: #eee;
-	border: none;
-	padding: 5px 10px;
+	background-color: $blue;
+	border: 1px solid $blue;
+	padding: 2px 6px;
 	border-radius: 4px;
 	cursor: pointer;
-	cursor: hand;
-	color: #333;
+	color: $white;
 	margin-bottom: 12px;
+	&:hover {
+		background-color: $silver;
+		color: $blue;
+	}
 }
