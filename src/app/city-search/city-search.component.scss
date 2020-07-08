@@ -1,51 +1,16 @@
 /* CitySearch private styles */
 @import "./src/app/app.component.scss";
 
-.search-result {
-	li {
-		border-bottom: 1px solid $blue;
-		border-left: 1px solid $blue;
-		border-right: 1px solid $blue;
-		width: 195px;
-		height: auto;
-		padding: 5px;
-		background-color: $white;
-		cursor: pointer;
-		list-style-type: none;
-		&:hover {
-			background-color: $pink;
-			a {
-				color: $white;
-			}
-		}
-		a {
-			color: $blue;
-			display: block;
-			&:active {
-				color: $white;
-			}
-		}
-	}
-}
 #search-box--city {
 	width: 200px;
 	height: auto;
-}
-ul.search-result {
-	margin-top: 0;
-	padding-left: 0;
 }
 #search-component--city {
 	clear:both;
 	float: none;
 	padding-left: 20px;
 }
-svg {
-	padding-left: 5px;
-	margin-top: 0;
-	width: 1.5em;
-	height: 1.5em;
-	fill: $blue;
+svg.search-svg {
 	#search-box--city:focus + & {
 		fill: $pink;
 	}

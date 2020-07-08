@@ -1,10 +1,11 @@
 <div class="content">
   <h2 class="subtitle">My Countries</h2>
 
-  <ul class="countries">
+  <ul class="list-with-badge">
     <li *ngFor="let country of countries">
+      <span class="badge">{{country.id}}</span>
       <a routerLink="/detail/{{country.country.replace(' ', '_')}}">
-        <span class="badge">{{country.id}}</span> {{country.country}}
+        {{country.country}}
       </a>
     </li>
   </ul>

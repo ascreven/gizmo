@@ -4,15 +4,16 @@
     <br>
     <h3 class="heading">Cities located in {{country.country}}</h3>
     <!-- list of cities within country -->
-    <ul class="cities">
+    <ul class="list-with-badge">
       <li *ngFor="let city of cities">
+        <span class="badge">{{city.id}}</span>
         <a routerLink="/detail/{{city.country.replace(' ', '_')}}/{{city.name.replace(' ', '_')}}">
-          <span class="badge">{{city.id}}</span> {{city.name}}
+          {{city.name}}
         </a>
       </li>
     </ul>
 
-    <button (click)="goBack()">go back</button>
+    <button class="button-secondary" (click)="goBack()">go back</button>
   </div>
 
   <div *ngIf="!country">
