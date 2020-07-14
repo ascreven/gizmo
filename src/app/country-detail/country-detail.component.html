@@ -7,7 +7,7 @@
     <ul class="list-with-badge">
       <li *ngFor="let city of cities">
         <span class="badge">{{city.id}}</span>
-        <a routerLink="/detail/{{city.country.replace(' ', '_')}}/{{city.name.replace(' ', '_')}}">
+        <a routerLink="{{city | cityPath}}">
           {{city.name}}
         </a>
       </li>

@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { Country }         from '../country';
 import { CountryService }  from '../country.service';
 import { City }         from '../city';
+import { CityPathPipe } from '../city-path.pipe';
 
 @Component({
   selector: 'app-country-detail',

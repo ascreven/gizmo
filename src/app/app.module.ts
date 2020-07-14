@@ -17,6 +17,8 @@ import { MessagesComponent }    from './messages/messages.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent }  from './country-detail/country-detail.component';
 import { CountrySearchComponent }  from './country-search/country-search.component';
+import { CityPathPipe } from './city-path.pipe';
+import { CountryPathPipe } from './country-path.pipe';
 
 @NgModule({
   imports: [
@@ -41,7 +43,9 @@ import { CountrySearchComponent }  from './country-search/country-search.compone
     CitySearchComponent,
     CountriesComponent,
     CountryDetailComponent,
-    CountrySearchComponent
+    CountrySearchComponent,
+    CityPathPipe,
+    CountryPathPipe
   ],
   bootstrap: [ AppComponent ]
 })

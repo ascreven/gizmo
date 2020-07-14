@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Country } from '../country';
 import { CountryService } from '../country.service';
+import { CountryPathPipe } from '../country-path.pipe';
 
 import * as _ from "lodash";
 

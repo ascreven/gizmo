@@ -3,6 +3,9 @@ import { City } from '../city';
 import { CityService } from '../city.service';
 import { Country } from '../country';
 import { CountryService } from '../country.service';
+import { PathService } from '../path.service';
+import { CityPathPipe } from '../city-path.pipe';
+import { CountryPathPipe } from '../country-path.pipe';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +16,9 @@ export class DashboardComponent implements OnInit {
   cities: City[] = [];
   countries: Country[] = [];
 
-  constructor(private cityService: CityService, private countryService: CountryService) { }
+  constructor(
+    private cityService: CityService,
+    private countryService: CountryService) { }
 
   ngOnInit() {
     this.getCities();
@@ -29,4 +34,5 @@ export class DashboardComponent implements OnInit {
     this.countryService.getCountries()
       .subscribe(countries => this.countries = countries.slice(1, 5));
   }
+
 }

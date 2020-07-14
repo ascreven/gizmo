@@ -8,6 +8,7 @@ import { Country } from './country';
 import { City } from './city';
 import { MessageService } from './message.service';
 import { CityService } from './city.service';
+import { PathService } from './path.service';
 import * as _ from "lodash";
 
 @Injectable({ providedIn: 'root' })
@@ -22,7 +23,8 @@ export class CountryService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private pathService: PathService) { }
 
 
   getCountries(): Observable<Country[]> {
@@ -60,7 +62,7 @@ export class CountryService {
 
   /** GET country by name. Will 404 if id not found */
   getCountry(country: string): Observable<Country> {
-    const url = `${this.countriesUrl}/?country=${country.replace("_", " ")}`;
+    const url = `${this.countriesUrl}/?country=${this.pathService.getWordsFromPath(country)}`;
     return this.http.get<Country>(url).pipe(
       map(x => {
         if (Object.keys(x).length) { // _ is array of cities in that country
@@ -83,7 +85,7 @@ export class CountryService {
 
   /** GET cities by country name. Will 404 if id not found */
   getCitiesInCountry(country: string): Observable<City[]> {
-    const url = `${this.countriesUrl}/?country=${country.replace("_", " ")}`;
+    const url = `${this.countriesUrl}/?country=${this.pathService.getWordsFromPath(country)}`;
     return this.http.get<City[]>(url).pipe(
       tap(_ => this.log(`fetched cities in country=${country}`)),
       catchError(this.handleError<City[]>(`getCitiesInCountry country=${country}`))

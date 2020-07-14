@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { City } from '../city';
 import { CityService } from '../city.service';
+import { CityPathPipe } from '../city-path.pipe';
 
 @Component({
   selector: 'app-cities',

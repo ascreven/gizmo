@@ -12,7 +12,7 @@
 
   <ul class="search-result">
     <li *ngFor="let country of countries$ | async" >
-      <a routerLink="/detail/{{country.country.replace(' ', '_')}}">
+      <a routerLink="{{country | countryPath}}">
         {{country.country}}
       </a>
     </li>

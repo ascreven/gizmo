@@ -8,6 +8,7 @@ import {
 
 import { City } from '../city';
 import { CityService } from '../city.service';
+import { CityPathPipe } from '../city-path.pipe';
 
 @Component({
   selector: 'app-city-search',

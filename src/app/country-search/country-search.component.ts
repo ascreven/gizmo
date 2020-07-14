@@ -8,6 +8,7 @@ import {
 
 import { Country } from '../country';
 import { CountryService } from '../country.service';
+import { CountryPathPipe } from '../country-path.pipe';
 
 @Component({
   selector: 'app-country-search',

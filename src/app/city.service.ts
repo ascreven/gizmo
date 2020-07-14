@@ -6,7 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { City } from './city';
 import { MessageService } from './message.service';
-
+import { PathService } from './path.service';
 
 @Injectable({ providedIn: 'root' })
 export class CityService {
@@ -19,7 +19,8 @@ export class CityService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private pathService: PathService) { }
 
   /** GET cities from the server */
   getCities(): Observable<City[]> {
@@ -46,7 +47,7 @@ export class CityService {
 
   /** GET city by name and country. Will 404 if id not found */
   getCity(name: string, country: string): Observable<City> {
-    const url = `${this.citiesUrl}/?name=${name.replace('_', ' ')}&country=${country.replace('_', ' ')}`;
+    const url = `${this.citiesUrl}/?name=${this.pathService.getWordsFromPath(name)}&country=${this.pathService.getWordsFromPath(country)}`;
     return this.http.get<City>(url).pipe(
       map(_ => {
         if (Object.keys(_).length) { // _ is array of cities that match; city exists

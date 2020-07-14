@@ -4,7 +4,7 @@
   <ul class="list-with-badge">
     <li *ngFor="let country of countries">
       <span class="badge">{{country.id}}</span>
-      <a routerLink="/detail/{{country.country.replace(' ', '_')}}">
+      <a routerLink="{{country | countryPath}}">
         {{country.country}}
       </a>
     </li>
