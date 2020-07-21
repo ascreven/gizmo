@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { City } from './city';
+import { City } from '../cities/city';
 
 @Pipe({
   name: 'countryPath'

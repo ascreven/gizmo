@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CitiesComponent } from './cities/cities.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
-import { CityDetailComponent }  from './city-detail/city-detail.component';
+import { CityDetailComponent }  from './cities/city-detail/city-detail.component';
 import { CountriesComponent } from './countries/countries.component';
-import { CountryDetailComponent }  from './country-detail/country-detail.component';
+import { CountryDetailComponent }  from './countries/country-detail/country-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },

@@ -10,15 +10,15 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
-import { CityDetailComponent }  from './city-detail/city-detail.component';
+import { CityDetailComponent }  from './cities/city-detail/city-detail.component';
 import { CitiesComponent }      from './cities/cities.component';
-import { CitySearchComponent }  from './city-search/city-search.component';
+import { CitySearchComponent }  from './cities/city-search/city-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 import { CountriesComponent } from './countries/countries.component';
-import { CountryDetailComponent }  from './country-detail/country-detail.component';
-import { CountrySearchComponent }  from './country-search/country-search.component';
-import { CityPathPipe } from './city-path.pipe';
-import { CountryPathPipe } from './country-path.pipe';
+import { CountryDetailComponent }  from './countries/country-detail/country-detail.component';
+import { CountrySearchComponent }  from './countries/country-search/country-search.component';
+import { CityPathPipe } from './cities/city-path.pipe';
+import { CountryPathPipe } from './countries/country-path.pipe';
 
 @NgModule({
   imports: [

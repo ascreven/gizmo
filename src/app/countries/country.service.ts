@@ -5,10 +5,10 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Country } from './country';
-import { City } from './city';
-import { MessageService } from './message.service';
-import { CityService } from './city.service';
-import { PathService } from './path.service';
+import { City } from '../cities/city';
+import { MessageService } from '../message.service';
+import { CityService } from '../cities/city.service';
+import { PathService } from '../path.service';
 import * as _ from "lodash";
 
 @Injectable({ providedIn: 'root' })

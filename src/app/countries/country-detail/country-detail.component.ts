@@ -4,8 +4,8 @@ import { Location } from '@angular/common';
 
 import { Country }         from '../country';
 import { CountryService }  from '../country.service';
-import { City }         from '../city';
-import { CityPathPipe } from '../city-path.pipe';
+import { City }         from '../../cities/city';
+import { CityPathPipe } from '../../cities/city-path.pipe';
 
 @Component({
   selector: 'app-country-detail',

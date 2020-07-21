@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { City } from '../city';
-import { CityService } from '../city.service';
-import { Country } from '../country';
-import { CountryService } from '../country.service';
+import { City } from '../cities/city';
+import { CityService } from '../cities/city.service';
+import { Country } from '../countries/country';
+import { CountryService } from '../countries/country.service';
 import { PathService } from '../path.service';
-import { CityPathPipe } from '../city-path.pipe';
-import { CountryPathPipe } from '../country-path.pipe';
+import { CityPathPipe } from '../cities/city-path.pipe';
+import { CountryPathPipe } from '../countries/country-path.pipe';
 
 @Component({
   selector: 'app-dashboard',
