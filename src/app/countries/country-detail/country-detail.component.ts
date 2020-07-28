@@ -6,6 +6,7 @@ import { Country }         from '../country';
 import { CountryService }  from '../country.service';
 import { City }         from '../../cities/city';
 import { CityPathPipe } from '../../cities/city-path.pipe';
+import { ApiService }         from '../../api.service';
 
 @Component({
   selector: 'app-country-detail',
@@ -15,16 +16,19 @@ import { CityPathPipe } from '../../cities/city-path.pipe';
 export class CountryDetailComponent implements OnInit {
   country: Country;
   cities: City[];
+  countryInfo: Object;
 
   constructor(
     private route: ActivatedRoute,
     private countryService: CountryService,
-    private location: Location
+    private location: Location,
+    private apiService: ApiService,
   ) {}
 
   ngOnInit(): void {
     this.getCountry();
     this.getCitiesInCountry();
+    this.getCountryInfo();
   }
 
   getCountry(): void {
@@ -51,5 +55,12 @@ export class CountryDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  //api methods
+  getCountryInfo(): void {
+    const country = this.route.snapshot.paramMap.get('country');
+    this.apiService.getCountryInfo(country)
+      .subscribe(data => this.countryInfo = data);
   }
 }

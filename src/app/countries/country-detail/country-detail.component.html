@@ -1,7 +1,20 @@
 <div class="content">
   <div *ngIf="country">
     <h2 class="subtitle">{{country.country | uppercase}} Details</h2>
+
     <br>
+
+    <div *ngIf="countryInfo">
+      <h5>Score: {{countryInfo.results[0].score}} / 10</h5>
+      <h5>{{countryInfo.results[0].snippet}}</h5>
+    </div>
+    <div *ngIf="!countryInfo">
+      <h5>Score: Not Rated</h5>
+      <h5>Snippet unavailable.</h5>
+    </div>
+
+    <br>
+
     <h3 class="heading">Cities located in {{country.country}}</h3>
     <!-- list of cities within country -->
     <ul class="list-with-badge">
