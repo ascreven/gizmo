@@ -12,7 +12,7 @@ const routes: Routes = [
   // { path: 'detail/:country/:name', component: CityDetailComponent },
   // { path: 'cities', component: CitiesComponent },
   // { path: 'detail/:country', component: CountryDetailComponent },
-  // { path: 'countries', component: CountriesComponent },
+  { path: 'countries', component: CountriesComponent },
   { path: 'countries/:country', component: CountryDetailComponent }
 ];
 
