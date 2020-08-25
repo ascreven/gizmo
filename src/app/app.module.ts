@@ -14,7 +14,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 //import { CitiesComponent }      from './cities/cities.component';
 //import { CitySearchComponent }  from './cities/city-search/city-search.component';
 import { MessagesComponent }    from './messages/messages.component';
-// import { CountriesComponent } from './countries/countries.component';
+import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent }  from './countries/country-detail/country-detail.component';
 // import { CountrySearchComponent }  from './countries/country-search/country-search.component';
 //import { CityPathPipe } from './cities/city-path.pipe';
@@ -41,7 +41,7 @@ import { CountryDetailComponent }  from './countries/country-detail/country-deta
     // CityDetailComponent,
     MessagesComponent,
     // CitySearchComponent,
-    // CountriesComponent,
+    CountriesComponent,
     CountryDetailComponent,
     // CountrySearchComponent,
     // CityPathPipe,

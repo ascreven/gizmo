@@ -3,9 +3,12 @@
 
   <ul class="list-with-badge">
     <li *ngFor="let country of countries">
-      <span class="badge">{{country.id}}</span>
-      <a routerLink="{{country | countryPath}}">
+      <!-- <span class="badge">{{country.score}}</span> -->
+      <!-- <a routerLink="{{country | countryPath}}">
         {{country.country}}
+      </a> -->
+      <a routerLink="/countries/{{country.id}}">
+        {{country.name}}
       </a>
     </li>
   </ul>

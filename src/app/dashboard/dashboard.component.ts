@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { City } from '../cities/city';
 // import { CityService } from '../cities/city.service';
 // import { Country } from '../countries/country';
-// import { CountryService } from '../countries/country.service';
+import { CountryService } from '../countries/country.service';
 // import { PathService } from '../shared/path.service';
 // import { CityPathPipe } from '../cities/city-path.pipe';
 // import { CountryPathPipe } from '../countries/country-path.pipe';
@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     // private cityService: CityService,
-    // private countryService: CountryService,
+    private countryService: CountryService,
     private apiService: ApiService) { }
 
   ngOnInit() {
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
   getCountries(): void {
     // this.countryService.getCountries()
     //   .subscribe(countries => this.countries = countries.slice(1, 5));
-    this.countries = this.apiService.getTopCountries();
+    this.countries = this.countryService.getTopCountries();
   }
 
 }
