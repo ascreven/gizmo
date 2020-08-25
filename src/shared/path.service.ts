@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { City } from './cities/city';
-import { Pipe, PipeTransform } from '@angular/core';
-import { CityPathPipe } from './cities/city-path.pipe';
-import { CountryPathPipe } from './countries/country-path.pipe';
+// import { City } from '../app/cities/city';
+// import { Pipe, PipeTransform } from '@angular/core';
+// import { CityPathPipe } from '../app/cities/city-path.pipe';
+// import { CountryPathPipe } from '../app/countries/country-path.pipe';
 
 @Injectable({
   providedIn: 'root'

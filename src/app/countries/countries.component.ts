@@ -5,6 +5,7 @@ import { CountryService } from './country.service';
 import { CountryPathPipe } from './country-path.pipe';
 
 import * as _ from "lodash";
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-countries',
@@ -12,19 +13,19 @@ import * as _ from "lodash";
   styleUrls: ['./countries.component.scss']
 })
 export class CountriesComponent implements OnInit {
-  countries: Country[];
+  countries: any[];
 
-  constructor(private countryService: CountryService) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.getCountries();
   }
 
   getCountries(): void {
-    this.countryService.getCountries()
-    .subscribe(countries => {
-      this.countries = _.uniqBy(countries, 'country');
-    });
+    this.countries = this.apiService.getTopCountries()
+    // .subscribe(countries => {
+    //   this.countries = _.uniqBy(countries, 'country');
+    // });
   }
 
 }
