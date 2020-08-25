@@ -13,7 +13,7 @@ const routes: Routes = [
   // { path: 'cities', component: CitiesComponent },
   // { path: 'detail/:country', component: CountryDetailComponent },
   { path: 'countries', component: CountriesComponent },
-  { path: 'countries/:country', component: CountryDetailComponent }
+  { path: 'countries/:id', component: CountryDetailComponent }
 ];
 
 @NgModule({

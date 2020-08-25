@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 // import { Location } from '@angular/common';
 
 // import { Country }         from '../country';
-// import { CountryService }  from '../country.service';
+import { CountryService }  from '../country.service';
 // import { City }         from '../../cities/city';
 // import { ApiService }         from '../../api.service';
 
@@ -17,26 +17,24 @@ export class CountryDetailComponent implements OnInit {
 //   cities: City[];
 //   countryInfo: Object;
 
-//   constructor(
-//     private route: ActivatedRoute,
-//     private countryService: CountryService,
+  constructor(
+    private route: ActivatedRoute,
+    private countryService: CountryService,
 //     private location: Location,
 //     private apiService: ApiService,
-//   ) {}
+  ) {}
 
   ngOnInit(): void {
-    // this.getCountry();
+    this.getCountry();
     // this.getCitiesInCountry();
     // this.getTopCountries();
   }
 
-//   getCountry(): void {
-//     const country = this.route.snapshot.paramMap.get('country');
-//     // strings with spaces get converted to _ in url; change back to check db
-//     const dbCountry = country.replace("_", " ");
-//     this.countryService.getCountry(dbCountry)
-//       .subscribe(country => this.country = country);
-//   }
+  getCountry(): void {
+    const country = this.route.snapshot.paramMap.get('id');
+    this.countryService.getCountry(country)
+    console.log(country);
+  }
 
 //   getCountryById(): void {
 //     const id = +this.route.snapshot.paramMap.get('id');
