@@ -6,9 +6,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Country } from './country';
 import { City } from '../cities/city';
-import { MessageService } from '../message.service';
+import { MessageService } from '../shared/message.service';
 import { CityService } from '../cities/city.service';
-import { PathService } from '../path.service';
+import { PathService } from '../shared/path.service';
 import * as _ from "lodash";
 
 @Injectable({ providedIn: 'root' })

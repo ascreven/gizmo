@@ -10,15 +10,15 @@ import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
-import { CityDetailComponent }  from './cities/city-detail/city-detail.component';
-import { CitiesComponent }      from './cities/cities.component';
-import { CitySearchComponent }  from './cities/city-search/city-search.component';
+//import { CityDetailComponent }  from './cities/city-detail/city-detail.component';
+//import { CitiesComponent }      from './cities/cities.component';
+//import { CitySearchComponent }  from './cities/city-search/city-search.component';
 import { MessagesComponent }    from './messages/messages.component';
-import { CountriesComponent } from './countries/countries.component';
+// import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent }  from './countries/country-detail/country-detail.component';
-import { CountrySearchComponent }  from './countries/country-search/country-search.component';
-import { CityPathPipe } from './cities/city-path.pipe';
-import { CountryPathPipe } from './countries/country-path.pipe';
+// import { CountrySearchComponent }  from './countries/country-search/country-search.component';
+//import { CityPathPipe } from './cities/city-path.pipe';
+// import { CountryPathPipe } from './countries/country-path.pipe';
 
 @NgModule({
   imports: [
@@ -37,15 +37,15 @@ import { CountryPathPipe } from './countries/country-path.pipe';
   declarations: [
     AppComponent,
     DashboardComponent,
-    CitiesComponent,
-    CityDetailComponent,
+    // CitiesComponent,
+    // CityDetailComponent,
     MessagesComponent,
-    CitySearchComponent,
-    CountriesComponent,
+    // CitySearchComponent,
+    // CountriesComponent,
     CountryDetailComponent,
-    CountrySearchComponent,
-    CityPathPipe,
-    CountryPathPipe
+    // CountrySearchComponent,
+    // CityPathPipe,
+    // CountryPathPipe
   ],
   bootstrap: [ AppComponent ]
 })

@@ -5,8 +5,8 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { City } from './city';
-import { MessageService } from '../message.service';
-import { PathService } from '../path.service';
+import { MessageService } from '../shared/message.service';
+import { PathService } from '../shared/path.service';
 
 @Injectable({ providedIn: 'root' })
 export class CityService {
