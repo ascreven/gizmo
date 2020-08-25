@@ -9,6 +9,7 @@ import { CountryService } from '../countries/country.service';
 })
 export class DashboardComponent implements OnInit {
   countries: any[] = [];
+  countries20: any[] = []
 
   constructor(
     private countryService: CountryService,
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit {
 
   getCountries(): void {
     this.countries = this.countryService.getTopCountries()
+    this.countries20 = this.countryService.getTopCountries(20)
   }
 
 }
