@@ -6,9 +6,7 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { Country } from '../country';
 import { CountryService } from '../country.service';
-import { CountryPathPipe } from '../country-path.pipe';
 
 @Component({
   selector: 'app-country-search',
@@ -16,11 +14,11 @@ import { CountryPathPipe } from '../country-path.pipe';
   styleUrls: [ './country-search.component.scss' ]
 })
 export class CountrySearchComponent implements OnInit {
-  countries$: Observable<Country[]>;
-  countries: Country[];
+  countries$: Observable<any[]>;
+  countries: any[];
   private searchTerms = new Subject<string>();
 
-  constructor(private countryService: CountryService) {}
+  constructor() {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -28,15 +26,15 @@ export class CountrySearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.countries$ = this.searchTerms.pipe(
-      // wait 300ms after each keystroke before considering the term
-      debounceTime(300),
-
-      // ignore new term if same as previous term
-      distinctUntilChanged(),
-
-      // switch to new search observable each time the term changes
-      switchMap((term: string) => this.countryService.searchCountries(term)),
-    );
+    // this.countries$ = this.searchTerms.pipe(
+    //   // wait 300ms after each keystroke before considering the term
+    //   debounceTime(300),
+    //
+    //   // ignore new term if same as previous term
+    //   distinctUntilChanged(),
+    //
+    //   // switch to new search observable each time the term changes
+    //   switchMap((term: string) => this.countryService.searchCountries(term)),
+    // );
   }
 }

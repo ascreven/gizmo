@@ -1,36 +1,28 @@
 <p>Country works</p>
-<!-- <div class="content">
+<div class="content">
   <div *ngIf="country">
-    <h2 class="subtitle">{{country.country | uppercase}} Details</h2>
+    <h2 class="subtitle">{{country.name | uppercase}} Details</h2>
 
-    <br>
-
-    <div *ngIf="countryInfo">
-      <h5>Score: {{countryInfo.results[0].score}} / 10</h5>
-      <h5>{{countryInfo.results[0].snippet}}</h5>
-    </div>
-    <div *ngIf="!countryInfo">
-      <h5>Score: Not Rated</h5>
-      <h5>Snippet unavailable.</h5>
+    <div>
+      <h5>Score: {{country.score | number:'1.1-4'}} / 10</h5>
+      <h5>{{country.snippet}}</h5>
     </div>
 
-    <br>
 
-    <h3 class="heading">Cities located in {{country.country}}</h3> -->
-    <!-- list of cities within country -->
-    <!-- <ul class="list-with-badge">
+    <!-- <h3 class="heading">Popular Cities</h3>
+    <ul class="list-with-badge">
       <li *ngFor="let city of cities">
-        <span class="badge">{{city.id}}</span>
-        <a routerLink="{{city | cityPath}}">
+        <span class="badge">{{city.score | number:'1.1-2'}}</span>
+        <a routerLink="{{city.name}}">
           {{city.name}}
         </a>
       </li>
-    </ul>
+    </ul> -->
 
     <button class="button-secondary" (click)="goBack()">go back</button>
   </div>
 
-  <div *ngIf="!country">
+  <!-- <div *ngIf="!country">
     <app-country-search></app-country-search>
-  </div>
-</div> -->
+  </div> -->
+</div>
