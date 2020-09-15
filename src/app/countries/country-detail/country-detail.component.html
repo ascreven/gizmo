@@ -8,6 +8,16 @@
       <h5>{{country.snippet}}</h5>
     </div>
 
+    <ngb-carousel *ngIf="country.images" class="d-block w-50 h-50" style="background-color:black; overflow:hidden;">
+      <ng-template ngbSlide *ngFor='let image of country.images'>
+        <div class="picsum-img-wrapper" style="text-align: center;">
+          <img [src]="image.source_url" alt="{{image.caption}}" style="max-width:100%; height:auto;">
+        </div>
+        <div class="carousel-caption">
+          <p>{{image.caption}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
 
     <!-- <h3 class="heading">Popular Cities</h3>
     <ul class="list-with-badge">

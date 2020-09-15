@@ -15,13 +15,15 @@ import { MessagesComponent }    from './messages/messages.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent }  from './countries/country-detail/country-detail.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-
+    NgbModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
