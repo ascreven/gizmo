@@ -155,7 +155,7 @@ svg.search-svg {
 	margin: 0 0 2em 0;
 	list-style-type: none;
 	padding: 0;
-	width: 15em;
+	width: 18em;
 	li {
 		display: block;
 		cursor: pointer;
@@ -176,7 +176,7 @@ svg.search-svg {
 	a {
 		color: $blue;
 		display: inline-block;
-		width: 80%;
+		width: 70%;
 		&:hover {
 			color: $white;
 		}
@@ -191,10 +191,10 @@ svg.search-svg {
 		margin-top: -5px;
 		height: 2.4em;
 		min-width: 16px;
-		text-align: right;
+		text-align: left;
 		margin-right: .8em;
 		border-radius: 4px 0 0 4px;
-		width: 15%;
+		width: 25%;
 	}
 }
 .list-with-badge-delete {
