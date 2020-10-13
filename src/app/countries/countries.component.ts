@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import * as _ from "lodash";
-
-import { CountryService } from './country.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-countries',
@@ -9,17 +6,8 @@ import { CountryService } from './country.service';
   styleUrls: ['./countries.component.scss']
 })
 
-export class CountriesComponent implements OnInit {
-  countries: any[];
+export class CountriesComponent {
 
-  constructor(private countryService: CountryService) { }
-
-  ngOnInit() {
-    this.getCountries();
-  }
-
-  getCountries(): void {
-    this.countries = this.countryService.getTopCountries(20)
-  }
+  constructor() { }
 
 }

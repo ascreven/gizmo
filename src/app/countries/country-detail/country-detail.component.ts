@@ -21,7 +21,7 @@ export class CountryDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private countryService: CountryService,
     private citiesService: CitiesService,
-    private location: Location,
+    private location: Location
 //     private apiService: ApiService,
   ) {}
 

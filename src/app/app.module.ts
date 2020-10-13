@@ -11,11 +11,13 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 
-import { MessagesComponent }    from './messages/messages.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent }  from './countries/country-detail/country-detail.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CitiesComponent } from './cities/cities.component';
+import { CityDetailComponent } from './cities/city-detail/city-detail.component';
+import { CountryListComponent } from './countries/country-list/country-list.component';
 
 @NgModule({
   imports: [
@@ -34,9 +36,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     DashboardComponent,
-    MessagesComponent,
     CountriesComponent,
     CountryDetailComponent,
+    CitiesComponent,
+    CityDetailComponent,
+    CountryListComponent,
   ],
   bootstrap: [ AppComponent ]
 })
