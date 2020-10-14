@@ -14,7 +14,7 @@ import { CitiesService }     from '../../cities/cities.service';
 })
 export class CountryDetailComponent implements OnInit {
   country: any;
-  cities: any[];
+  cities: any[] = [];
 //   countryInfo: Object;
 
   constructor(
@@ -28,11 +28,16 @@ export class CountryDetailComponent implements OnInit {
   ngOnInit(): void {
     const countryId = this.route.snapshot.paramMap.get('id');
     this.getCountry(countryId);
-    this.getTopCities(countryId);
+    // this.getTopCities(countryId);
   }
 
   getCountry(countryId: any): void {
-    this.country = this.countryService.getCountry(countryId);
+    // this.country = this.countryService.getCountry(countryId);
+    this.countryService.getCountry(countryId)
+    .subscribe((response) => {
+        console.log(response);
+        this.country = response.results[0];
+    });
   }
 
   getTopCities(countryId: any): void {
