@@ -15,8 +15,8 @@ export class CountryService {
   constructor(private http: HttpClient) { }
 
   countries = COUNTRIES;
-  account = "UR98JZCA";
-  token = "jd52ijj8vyq97vp96v88xl7ybuygprhf";
+  account = "";
+  token = "";
   url = "https://www.triposo.com/api/20200803/location.json?";
 
   public getTopCountries(num: number = 10, type: string = "country") {
