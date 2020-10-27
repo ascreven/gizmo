@@ -4,7 +4,6 @@ import { Location } from '@angular/common';
 
 // import { Country }         from '../country';
 import { CountryService }  from '../country.service';
-import { CitiesService }     from '../../cities/cities.service';
 // import { ApiService }         from '../../api.service';
 
 @Component({
@@ -15,34 +14,31 @@ import { CitiesService }     from '../../cities/cities.service';
 export class CountryDetailComponent implements OnInit {
   country: any;
   cities: any[] = [];
-//   countryInfo: Object;
 
   constructor(
     private route: ActivatedRoute,
     private countryService: CountryService,
-    private citiesService: CitiesService,
     private location: Location
 //     private apiService: ApiService,
   ) {}
 
   ngOnInit(): void {
     const countryId = this.route.snapshot.paramMap.get('id');
-    this.getCountry(countryId);
-    // this.getTopCities(countryId);
+    this.getCountry();
+    this.getTopCities(countryId);
   }
 
-  getCountry(countryId: any): void {
-    // this.country = this.countryService.getCountry(countryId);
-    this.countryService.getCountry(countryId)
-    .subscribe((response) => {
-        console.log(response);
-        this.country = response.results[0];
+  getCountry(): void {
+    this.route.data.subscribe((data: { country: any }) => {
+      this.country = data.country.results[0];
     });
   }
 
   getTopCities(countryId: any): void {
-    this.cities = this.citiesService.getCitiesByCountry(countryId);
-    console.log(this.cities);
+    this.countryService.getCitiesByCountry(countryId)
+    .subscribe((response) => {
+        this.cities = response.results;
+    });
   }
 
   goBack(): void {

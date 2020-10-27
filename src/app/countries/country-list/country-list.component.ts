@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import * as _ from "lodash";
-
 import { CountryService } from '../country.service';
 
 @Component({
@@ -9,7 +7,7 @@ import { CountryService } from '../country.service';
   styleUrls: ['./country-list.component.sass']
 })
 export class CountryListComponent implements OnInit {
-  countries: any[];
+  countries: any[] = [];
   @Input() countryCount: number = 20
 
   constructor(private countryService: CountryService) { }
@@ -19,7 +17,10 @@ export class CountryListComponent implements OnInit {
   }
 
   getCountries(): void {
-    this.countries = this.countryService.getTopCountries(this.countryCount);
+    this.countryService.getTopCountries(this.countryCount)
+    .subscribe((response: any) => {
+      this.countries = response.results;
+    });
   }
 
 }

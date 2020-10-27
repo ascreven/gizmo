@@ -22,7 +22,7 @@
     <ul class="list-with-badge">
       <li *ngFor="let city of cities">
         <span class="badge">★ {{city.score | number:'1.1-2'}}</span>
-        <a routerLink="{{city.name}}">
+        <a routerLink="{{city.id}}">
           {{city.name}}
         </a>
       </li>
