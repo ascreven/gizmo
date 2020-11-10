@@ -6,7 +6,7 @@ import { HttpClient, HttpErrorResponse, HttpResponse, HttpHeaders, HttpRequest }
 import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Country } from '../data/country.model';
-
+import { environment } from './../../environments/environment';
 
 
 @Injectable({ providedIn: 'root' })
@@ -15,8 +15,8 @@ export class CountryService {
   constructor(private http: HttpClient) { }
 
   countries = COUNTRIES;
-  account = "";
-  token = "";
+  account = environment.TRIPOSO_API_ACCOUNT;
+  token = environment.TRIPOSO_API_TOKEN;
   url = "https://www.triposo.com/api/20200803/location.json?";
 
   public getTopCountries(num: number = 10, type: string = "country") {

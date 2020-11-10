@@ -18,6 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CitiesComponent } from './cities/cities.component';
 import { CityDetailComponent } from './cities/city-detail/city-detail.component';
 import { CountryListComponent } from './countries/country-list/country-list.component';
+import { AgmCoreModule } from '@agm/core';
+import { environment } from './../environments/environment';
 
 @NgModule({
   imports: [
@@ -26,6 +28,9 @@ import { CountryListComponent } from './countries/country-list/country-list.comp
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.GOOGLE_API_KEY
+    })
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.

@@ -25,6 +25,9 @@
           {{country.name}}
         </a>
       </h5>
+      <agm-map [latitude]="city.coordinates.latitude" [longitude]="city.coordinates.longitude" style="height:50vh; width: 100vh;"> 
+        <agm-marker [latitude]="city.coordinates.latitude" [longitude]="city.coordinates.longitude"></agm-marker>
+      </agm-map>
       <!-- <h5>
         <a href="{{map}}" target="_blank">
           Map of {{city.name}}

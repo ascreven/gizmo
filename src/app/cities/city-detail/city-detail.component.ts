@@ -26,7 +26,7 @@ export class CityDetailComponent implements OnInit {
 
     this.getCountryInfo();
 
-    // this.getCityMap();
+    this.getCityMap();
   }
 
   getCity(cityId: any): void {
@@ -38,10 +38,11 @@ export class CityDetailComponent implements OnInit {
   }
 
   getCityMap(): void {
-    var latitude: string = this.city.coordinates.latitude;
-    var longitude: string = this.city.coordinates.longitude;
-    this.map = "https://www.google.com/maps/@" + latitude + "," + longitude + ",13z";
-    this.embedMap = "https://maps.google.com/maps?q=" + latitude + "%2C" + longitude + "&t=&z=11&ie=UTF8&iwloc=&output=embed";
+    var latitude: string = '48.8635758'; //this.city.coordinates.latitude;
+    var longitude: string = '2.3319654'; //this.city.coordinates.longitude;
+
+    // this.map = "https://www.google.com/maps/@" + latitude + "," + longitude + ",13z";
+    // this.embedMap = "https://maps.google.com/maps?q=" + latitude + "%2C" + longitude + "&t=&z=11&ie=UTF8&iwloc=&output=embed";
   }
 
   getCountryInfo() {
