@@ -1,0 +1,22 @@
+/* CitySearch private styles */
+@import "./src/app/app.component.scss";
+
+#search-box--country {
+	width: 200px;
+	height: auto;
+	color: $blue;
+	border: 1px solid $blue;
+	&:focus {
+		color: $pink;
+	}
+}
+#search-component--country {
+	clear:both;
+	float: none;
+	padding-left: 20px;
+}
+svg.search-svg {
+	#search-box--country:focus + & {
+		fill: $pink;
+	}
+}

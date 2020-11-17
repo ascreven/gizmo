@@ -1,0 +1,6 @@
+<h3 class="subtitle padding-left-20">Top {{countryCount}} Countries</h3>
+<ul >
+  <li *ngFor="let country of countries">
+    <a routerLink="/countries/{{country.id}}">{{country.name}}</a>
+  </li>
+</ul>

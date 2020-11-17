@@ -1,0 +1,37 @@
+<div class="content">
+  <div *ngIf="country">
+    <h2 class="subtitle">{{country.name | uppercase}} Details</h2>
+
+    <div>
+      <h5>Score: {{country.score | number:'1.1-4'}} / 10</h5>
+      <h5>{{country.snippet}}</h5>
+    </div>
+
+    <ngb-carousel *ngIf="country.images" class="d-block w-50 carousel">
+      <ng-template ngbSlide *ngFor='let image of country.images'>
+        <div class="picsum-img-wrapper carousel-img-wrapper">
+          <img [src]="image.source_url" alt="{{image.caption}}" class="carousel-img">
+        </div>
+        <div class="carousel-caption">
+          <p>{{image.caption}}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <h3 class="heading">Popular Cities</h3>
+    <ul class="list-with-badge">
+      <li *ngFor="let city of cities">
+        <span class="badge">★ {{city.score | number:'1.1-2'}}</span>
+        <a routerLink="{{city.id}}">
+          {{city.name}}
+        </a>
+      </li>
+    </ul>
+
+    <button class="button-secondary" (click)="goBack()">go back</button>
+  </div>
+
+  <!-- <div *ngIf="!country">
+    <app-country-search></app-country-search>
+  </div> -->
+</div>
